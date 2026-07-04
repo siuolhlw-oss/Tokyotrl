@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>東京自由行 10 天行程與預算</title>
+  <title>東京自由行 11 天 10 夜行程與預算</title>
   <style>
     :root {
       color-scheme: light;
@@ -463,6 +463,33 @@
       margin-bottom: 10px;
     }
 
+    .journal-photos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .journal-photo {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f8fafc;
+    }
+
+    .journal-photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .journal-photo figcaption {
+      padding: 8px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
     .small {
       color: var(--muted);
       font-size: 0.88rem;
@@ -572,7 +599,7 @@
   <main class="shell">
     <header class="hero">
       <div>
-        <h1>東京自由行<br>10 天行程與預算</h1>
+        <h1>東京自由行<br>11 天 10 夜行程與預算</h1>
         <p>2026/7/3-2026/7/13，兩位成人。安排原則：早上戶外、午間室內、傍晚再戶外，避開東京夏天最悶熱的時段。</p>
       </div>
       <div class="hero-row">
@@ -714,7 +741,7 @@
         <h2>旅行日誌</h2>
         <span class="hint">實際走法會持續補上</span>
       </div>
-      <div class="journal">
+      <div class="journal" data-journal-list>
         <article class="journal-entry">
           <div class="journal-meta">
             <span class="tag">2026/7/4 六</span>
@@ -724,7 +751,7 @@
           <h3>睡晚一點的築地早晨，最後躲進 UNIQLO 吹冷氣</h3>
           <p>今天早上大家有點累，睡得比較晚，九點多才出門。原本想買交通套票，但算了一下和直接刷 Suica 只差一百左右，而且 KKday 買的票還一定要去羽田機場兌換，最後就放棄套票，直接用 Suica 出發。</p>
           <p>前往築地時跟著 Google Maps 走，結果在第一月台上錯車，才發現同一個月台還會有其他列車進站。還好條條大路通羅馬，繞了一下還是順利抵達築地市場。</p>
-          <p>到築地後先吃原本規劃裡的玉子燒名店「丸武」，接著去一間站立壽司店吃無菜單壽司，8 貫 omakase 共 ¥3,500。後面又加碼鮪魚套餐，6 個 ¥3,800，吃得很爽。</p>
+          <p>到築地後先吃原本規劃裡的玉子燒名店「長山」，接著去一間站立壽司店吃無菜單壽司，8 貫 omakase 共 ¥3,500。後面又加碼鮪魚套餐，6 個 ¥3,800，吃得很爽。</p>
           <p>接近中午時，原本討論要去皇居還是其他地方，但因為天氣熱起來，就先跑到銀座 UNIQLO 旗艦店吹冷氣、躲太陽。其實今天太陽沒有很大，不過中午前後切回室內，體力比較穩。</p>
           <p class="small">花費補記：站立壽司 omakase ¥3,500；鮪魚套餐 ¥3,800；交通改刷 Suica；套票未購買。</p>
         </article>
@@ -768,7 +795,7 @@
             <h3>築地、皇居、銀座/Harbs、東京鐵塔</h3>
             <div class="slot">
               <span class="time">07:30</span>
-              <div class="plan">築地吃早餐，市場周邊邊走邊吃。實際吃到玉子燒名店丸武、站立壽司 omakase、鮪魚套餐。</div>
+              <div class="plan">築地吃早餐，市場周邊邊走邊吃。實際吃到玉子燒名店長山、站立壽司 omakase、鮪魚套餐。</div>
             </div>
             <div class="slot">
               <span class="time">09:45</span>
@@ -1072,8 +1099,78 @@
     </section>
 
     <footer>
-      建立日期：2026/7/3。最近更新：2026/7/4，新增旅行日誌。此文件可離線閱讀；即時天氣、營業時間與票券狀態仍以出發當日官方資訊為準。
+      建立日期：2026/7/3。最近更新：2026/7/4，新增旅行日誌並修正 11 天 10 夜標題。此文件可離線閱讀；即時天氣、營業時間與票券狀態仍以出發當日官方資訊為準。
     </footer>
   </main>
+  <script src="data/journal.js"></script>
+  <script>
+    (function () {
+      const list = document.querySelector("[data-journal-list]");
+      const entries = window.TRAVEL_JOURNAL_ENTRIES || [];
+
+      if (!list || entries.length === 0) {
+        return;
+      }
+
+      const make = function (tagName, className, text) {
+        const node = document.createElement(tagName);
+        if (className) {
+          node.className = className;
+        }
+        if (text) {
+          node.textContent = text;
+        }
+        return node;
+      };
+
+      const renderEntry = function (entry) {
+        const article = make("article", "journal-entry");
+        const meta = make("div", "journal-meta");
+        meta.appendChild(make("span", "tag", entry.date));
+
+        (entry.tags || []).forEach(function (tag) {
+          meta.appendChild(make("span", tag.tone ? "tag " + tag.tone : "tag", tag.label));
+        });
+
+        article.appendChild(meta);
+        article.appendChild(make("h3", "", entry.title));
+
+        (entry.paragraphs || []).forEach(function (paragraph) {
+          article.appendChild(make("p", "", paragraph));
+        });
+
+        if (entry.note) {
+          article.appendChild(make("p", "small", entry.note));
+        }
+
+        if (entry.photos && entry.photos.length > 0) {
+          const photos = make("div", "journal-photos");
+          entry.photos.forEach(function (photo) {
+            const figure = make("figure", "journal-photo");
+            const img = document.createElement("img");
+            img.src = photo.src;
+            img.alt = photo.alt || "";
+            img.loading = "lazy";
+            img.decoding = "async";
+            figure.appendChild(img);
+
+            if (photo.caption) {
+              figure.appendChild(make("figcaption", "", photo.caption));
+            }
+
+            photos.appendChild(figure);
+          });
+          article.appendChild(photos);
+        }
+
+        return article;
+      };
+
+      list.textContent = "";
+      entries.map(renderEntry).forEach(function (entryNode) {
+        list.appendChild(entryNode);
+      });
+    })();
+  </script>
 </body>
 </html>

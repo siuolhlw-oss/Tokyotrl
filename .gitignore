@@ -5,3 +5,5 @@ desktop.ini
 node_modules/
 .netlify/
 
+private-inbox/
+assets/journal/raw/
