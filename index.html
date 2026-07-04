@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>東京自由行 10 天行程與預算</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #202124;
+      --muted: #667085;
+      --line: #d9dee7;
+      --paper: #fbfcfd;
+      --card: #ffffff;
+      --accent: #0f766e;
+      --accent-2: #b45309;
+      --blue: #1d4ed8;
+      --rose: #be123c;
+      --green-soft: #e7f6f3;
+      --amber-soft: #fff4df;
+      --blue-soft: #eaf1ff;
+      --rose-soft: #fff1f3;
+      --shadow: 0 10px 30px rgba(31, 41, 55, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
+      line-height: 1.62;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: var(--blue);
+      word-break: break-word;
+    }
+
+    .shell {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    .hero {
+      min-height: 34vh;
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(15, 118, 110, 0.94), rgba(29, 78, 216, 0.86)),
+        linear-gradient(45deg, #0f766e, #1d4ed8);
+      color: #fff;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2rem, 8vw, 4.2rem);
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 10px 0 0;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 1rem;
+    }
+
+    .hero-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      color: #fff;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin: 14px 0 18px;
+    }
+
+    .nav a {
+      display: block;
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    section {
+      margin: 18px 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 0 0 10px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.35rem;
+      line-height: 1.25;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+      line-height: 1.35;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 4px 18px rgba(31, 41, 55, 0.04);
+    }
+
+    .span-4 {
+      grid-column: span 4;
+    }
+
+    .span-6 {
+      grid-column: span 6;
+    }
+
+    .span-8 {
+      grid-column: span 8;
+    }
+
+    .span-12 {
+      grid-column: span 12;
+    }
+
+    .metric {
+      display: grid;
+      gap: 4px;
+      min-height: 100%;
+    }
+
+    .metric .label {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.86rem;
+    }
+
+    .metric .value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      line-height: 1.18;
+      color: var(--accent);
+    }
+
+    .metric .sub {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.96rem;
+    }
+
+    th,
+    td {
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      background: #f6f8fb;
+    }
+
+    td.money,
+    th.money {
+      text-align: right;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .total-row td {
+      font-weight: 800;
+      color: var(--accent);
+      border-bottom: 0;
+    }
+
+    .budget-band {
+      display: grid;
+      gap: 8px;
+    }
+
+    .band {
+      display: grid;
+      grid-template-columns: 82px 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .band strong {
+      color: var(--accent);
+    }
+
+    .bar {
+      height: 10px;
+      border-radius: 999px;
+      background: #edf2f7;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--blue));
+    }
+
+    .rules {
+      display: grid;
+      gap: 10px;
+    }
+
+    .rule {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 8px;
+      background: var(--green-soft);
+      border: 1px solid #b8e5dc;
+    }
+
+    .rule:nth-child(2) {
+      background: var(--amber-soft);
+      border-color: #f3d38b;
+    }
+
+    .rule:nth-child(3) {
+      background: var(--blue-soft);
+      border-color: #bdd1ff;
+    }
+
+    .rule b {
+      color: var(--accent);
+    }
+
+    .itinerary {
+      display: grid;
+      gap: 12px;
+    }
+
+    .day {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 14px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      box-shadow: 0 4px 18px rgba(31, 41, 55, 0.04);
+    }
+
+    .datebox {
+      border-radius: 8px;
+      padding: 10px;
+      background: #f6f8fb;
+      text-align: center;
+      align-self: start;
+      border: 1px solid var(--line);
+    }
+
+    .datebox .date {
+      display: block;
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .datebox .dow {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .locked {
+      display: inline-flex;
+      margin-top: 7px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: var(--rose-soft);
+      color: var(--rose);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .route {
+      display: grid;
+      gap: 8px;
+    }
+
+    .slot {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 8px;
+      padding: 8px 0;
+      border-top: 1px dashed #d7dce5;
+    }
+
+    .slot:first-of-type {
+      border-top: 0;
+    }
+
+    .slot .time {
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .slot .plan {
+      min-width: 0;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      margin: 3px 4px 0 0;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: #eef8f6;
+      color: #0f766e;
+      border: 1px solid #c5e9e2;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .tag.hot {
+      background: var(--amber-soft);
+      color: var(--accent-2);
+      border-color: #f0d096;
+    }
+
+    .tag.lock {
+      background: var(--rose-soft);
+      color: var(--rose);
+      border-color: #fecdd3;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 8px;
+      padding-left: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 8px;
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .box {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--accent);
+      border-radius: 4px;
+      margin-top: 3px;
+    }
+
+    .note {
+      border-left: 4px solid var(--accent);
+      background: #f2fbf9;
+      padding: 12px;
+      border-radius: 8px;
+      color: #164e45;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    footer {
+      margin: 28px 0 12px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .shell {
+        padding: 12px;
+      }
+
+      .hero {
+        padding: 20px;
+      }
+
+      .nav {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .span-4,
+      .span-6,
+      .span-8,
+      .span-12 {
+        grid-column: span 1;
+      }
+
+      .day {
+        grid-template-columns: 1fr;
+      }
+
+      .datebox {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        text-align: left;
+      }
+
+      .slot {
+        grid-template-columns: 72px 1fr;
+      }
+
+      table {
+        font-size: 0.9rem;
+      }
+
+      th,
+      td {
+        padding: 9px 6px;
+      }
+
+      .band {
+        grid-template-columns: 72px 1fr;
+      }
+
+      .band .money {
+        grid-column: 2;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .shell {
+        max-width: none;
+        padding: 0;
+      }
+
+      .hero,
+      .card,
+      .day {
+        box-shadow: none;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      section {
+        break-inside: avoid;
+      }
+
+      .day {
+        break-inside: avoid;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div>
+        <h1>東京自由行<br>10 天行程與預算</h1>
+        <p>2026/7/3-2026/7/13，兩位成人。安排原則：早上戶外、午間室內、傍晚再戶外，避開東京夏天最悶熱的時段。</p>
+      </div>
+      <div class="hero-row">
+        <span class="pill">已知固定支出 NT$87,098</span>
+        <span class="pill">已備現金 ¥70,000</span>
+        <span class="pill">迪士尼與富士山已購票</span>
+        <span class="pill">手機離線可讀</span>
+      </div>
+    </header>
+
+    <nav class="nav" aria-label="文件導覽">
+      <a href="#budget">預算</a>
+      <a href="#heat">避暑規則</a>
+      <a href="#itinerary">每日行程</a>
+      <a href="#offline">離線準備</a>
+    </nav>
+
+    <section id="budget">
+      <div class="section-title">
+        <h2>目前花費記錄</h2>
+        <span class="hint">單位：新台幣 TWD</span>
+      </div>
+      <div class="grid">
+        <article class="card span-4 metric">
+          <span class="label">已知固定支出</span>
+          <span class="value">NT$87,098</span>
+          <span class="sub">住宿、機票、保險、eSIM、迪士尼、富士山</span>
+        </article>
+        <article class="card span-4 metric">
+          <span class="label">平均每人</span>
+          <span class="value">NT$43,549</span>
+          <span class="sub">目前可確認支出除以 2 人</span>
+        </article>
+        <article class="card span-4 metric">
+          <span class="label">已備現金</span>
+          <span class="value">¥70,000</span>
+          <span class="sub">主要刷卡，現金當備用與小店支付</span>
+        </article>
+
+        <article class="card span-6">
+          <h3>已知支出明細</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>項目</th>
+                <th>計算</th>
+                <th class="money">金額</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>住宿</td>
+                <td>9 晚總額</td>
+                <td class="money">40,000</td>
+              </tr>
+              <tr>
+                <td>機票</td>
+                <td>兩人來回</td>
+                <td class="money">35,000</td>
+              </tr>
+              <tr>
+                <td>保險</td>
+                <td>旅平險/不便險</td>
+                <td class="money">1,700</td>
+              </tr>
+              <tr>
+                <td>eSIM</td>
+                <td>690 x 2</td>
+                <td class="money">1,380</td>
+              </tr>
+              <tr>
+                <td>迪士尼</td>
+                <td>3,162 x 2</td>
+                <td class="money">6,324</td>
+              </tr>
+              <tr>
+                <td>富士山</td>
+                <td>已購票/行程</td>
+                <td class="money">2,694</td>
+              </tr>
+              <tr class="total-row">
+                <td>合計</td>
+                <td>目前可確認</td>
+                <td class="money">87,098</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="small">備註：富士山金額依目前提供的「2694」記錄為總額；如果其實是單人價，總額需再加 NT$2,694。</p>
+        </article>
+
+        <article class="card span-6">
+          <h3>後續可控預算</h3>
+          <div class="budget-band">
+            <div class="band">
+              <strong>節制</strong>
+              <div class="bar" aria-hidden="true"><span style="width: 45%"></span></div>
+              <span class="money">總計約 NT$134,000</span>
+            </div>
+            <div class="band">
+              <strong>舒適</strong>
+              <div class="bar" aria-hidden="true"><span style="width: 66%"></span></div>
+              <span class="money">總計約 NT$160,000</span>
+            </div>
+            <div class="band">
+              <strong>放鬆</strong>
+              <div class="bar" aria-hidden="true"><span style="width: 92%"></span></div>
+              <span class="money">總計約 NT$194,000</span>
+            </div>
+          </div>
+          <p class="small">估算包含已知固定支出，再加餐飲、東京交通、景點雜支與購物。購物差異最大，建議單獨設上限。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="heat">
+      <div class="section-title">
+        <h2>避開最熱中午的排法</h2>
+        <span class="hint">每天照這個節奏微調</span>
+      </div>
+      <div class="rules">
+        <div class="rule">
+          <b>08:00-11:00</b>
+          <span>戶外景點、神社寺廟、公園、市場。早上先把最曬的點完成。</span>
+        </div>
+        <div class="rule">
+          <b>11:30-15:30</b>
+          <span>百貨、商場、餐廳、甜點、室內展望台、飯店休息。這段不要排長時間戶外步行。</span>
+        </div>
+        <div class="rule">
+          <b>16:00 之後</b>
+          <span>展望台、東京鐵塔、澀谷、阿美橫町、海邊夕陽。天色好時拍照也比較舒服。</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="itinerary">
+      <div class="section-title">
+        <h2>每日行程</h2>
+        <span class="hint">迪士尼、富士山已固定</span>
+      </div>
+      <div class="itinerary">
+        <article class="day">
+          <div class="datebox">
+            <span class="date">7/3</span>
+            <span class="dow">五</span>
+          </div>
+          <div class="route">
+            <h3>抵達東京、鰻魚飯</h3>
+            <div class="slot">
+              <span class="time">抵達後</span>
+              <div class="plan">機場到飯店、確認 eSIM / Suica / 信用卡海外交易正常。</div>
+            </div>
+            <div class="slot">
+              <span class="time">晚上</span>
+              <div class="plan">鰻魚飯。不要硬排景點，補水、防曬、濕紙巾、電解質飲料先買好。</div>
+            </div>
+            <div>
+              <span class="tag hot">低負擔</span>
+              <span class="tag">調整時差</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="datebox">
+            <span class="date">7/4</span>
+            <span class="dow">六</span>
+          </div>
+          <div class="route">
+            <h3>築地、皇居、銀座/Harbs、東京鐵塔</h3>
+            <div class="slot">
+              <span class="time">07:30</span>
+              <div class="plan">築地吃早餐，市場周邊邊走邊吃。</div>
+            </div>
+            <div class="slot">
+              <span class="time">09:45</span>
+              <div class="plan">皇居外苑或皇居東御苑快走一圈。熱起來前結束。</div>
+            </div>
+            <div class="slot">
+              <span class="time">11:30</span>
+              <div class="plan">銀座、東京車站、丸之內室內逛街。Harbs 可放這段。</div>
+            </div>
+            <div class="slot">
+              <span class="time">16:30</span>
+              <div class="plan">東京鐵塔，傍晚或晚上去比較舒服。</div>
+            </div>
+            <div>
+              <span class="tag">早上戶外</span>
+              <span class="tag hot">中午室內</span>
+              <span class="tag">夜景</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="datebox">
+            <span class="date">7/5</span>
+            <span class="dow">日</span>
+          </div>
+          <div class="route">
+            <h3>明治神宮、澀谷、澀谷 Sky、牛排飯</h3>
+            <div class="slot">
+              <span class="time">08:00</span>
+              <div class="plan">明治神宮，樹蔭多但仍建議早去。</div>
+            </div>
+            <div class="slot">
+              <span class="time">10:00</span>
+              <div class="plan">原宿、表參道慢慢移動，熱了就進店。</div>
+            </div>
+            <div class="slot">
+              <span class="time">12:00</span>
+              <div class="plan">澀谷百貨、咖啡、室內購物。避免在十字路口附近曬太久。</div>
+            </div>
+            <div class="slot">
+              <span class="time">17:00+</span>
+              <div class="plan">牛排飯建議晚餐，避開午餐排隊的熱。候選連結：<a href="https://www.instagram.com/reel/DVs-SHBkQQB/?igsh=M3UyN2tpbnl6OG1n">Instagram Reel</a></div>
+            </div>
+            <div class="slot">
+              <span class="time">日落前後</span>
+              <div class="plan">澀谷 Sky，日落或夜景比中午更值得。</div>
+            </div>
+            <div>
+              <span class="tag">神宮早去</span>
+              <span class="tag hot">牛排飯排晚餐</span>
+              <span class="tag">澀谷 Sky</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="datebox">
+            <span class="date">7/6</span>
+            <span class="dow">一</span>
+          </div>
+          <div class="route">
+            <h3>淺草寺、雷門、晴空塔</h3>
+            <div class="slot">
+              <span class="time">08:00</span>
+              <div class="plan">淺草寺、雷門、仲見世通。早上拍照人比較少。</div>
+            </div>
+            <div class="slot">
+              <span class="time">10:30</span>
+              <div class="plan">移動到晴空塔 / Solamachi。</div>
+            </div>
+            <div class="slot">
+              <span class="time">11:30</span>
+              <div class="plan">Solamachi 室內吃飯、逛街、避雨避暑。</div>
+            </div>
+            <div class="slot">
+              <span class="time">16:00+</span>
+              <div class="plan">天氣好再上展望台；若下雨就維持 Solamachi 室內行程。</div>
+            </div>
+            <div>
+              <span class="tag">雨天友善</span>
+              <span class="tag hot">中午在商場</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="datebox">
+            <span class="date">7/7</span>
+            <span class="dow">二</span>
+            <span class="locked">已購票</span>
+          </div>
+          <div class="route">
+            <h3>迪士尼 Day 1</h3>
+            <div class="slot">
+              <span class="time">開園後</span>
+              <div class="plan">先衝熱門設施或預約項目，早上體力最好。</div>
+            </div>
+            <div class="slot">
+              <span class="time">11:30</span>
+              <div class="plan">正式午餐、室內設施、秀、商店。中午避免戶外長隊。</div>
+            </div>
+            <div class="slot">
+              <span class="time">16:00+</span>
+              <div class="plan">戶外拍照、遊行、夜間設施。補電但不要在虎航機上用行動電源。</div>
+            </div>
+            <div>
+              <span class="tag lock">不可更動</span>
+              <span class="tag hot">中午室內</span>
+              <span class="tag">雨具</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="datebox">
+            <span class="date">7/8</span>
+            <span class="dow">三</span>
+            <span class="locked">已購票</span>
+          </div>
+          <div class="route">
+            <h3>迪士尼 Day 2</h3>
+            <div class="slot">
+              <span class="time">早上</span>
+              <div class="plan">補前一天沒玩到的熱門設施。</div>
+            </div>
+            <div class="slot">
+              <span class="time">中午</span>
+              <div class="plan">排室內、餐廳、商店。補水、補鹽分、不要硬撐。</div>
+            </div>
+            <div class="slot">
+              <span class="time">晚上</span>
+              <div class="plan">拍夜景、買最後想要的園區商品。</div>
+            </div>
+            <div>
+              <span class="tag lock">不可更動</span>
+              <span class="tag">備用襪子</span>
+              <span class="tag">涼感毛巾</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="datebox">
+            <span class="date">7/9</span>
+            <span class="dow">四</span>
+          </div>
+          <div class="route">
+            <h3>江之島</h3>
+            <div class="slot">
+              <span class="time">07:30</span>
+              <div class="plan">早點出發，人潮與熱度都比較低。</div>
+            </div>
+            <div class="slot">
+              <span class="time">09:00</span>
+              <div class="plan">江之島神社、海邊拍照、散步。</div>
+            </div>
+            <div class="slot">
+              <span class="time">12:00</span>
+              <div class="plan">餐廳、咖啡、室內點或水族館避暑。</div>
+            </div>
+            <div class="slot">
+              <span class="time">16:00+</span>
+              <div class="plan">看海邊夕陽後回東京。若大雨，與 7/12 秋葉原互換。</div>
+            </div>
+            <div>
+              <span class="tag">海邊</span>
+              <span class="tag hot">雨天可互換</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="datebox">
+            <span class="date">7/10</span>
+            <span class="dow">五</span>
+          </div>
+          <div class="route">
+            <h3>上野恩賜公園、阿美橫町、球衣球鞋、OS</h3>
+            <div class="slot">
+              <span class="time">08:30</span>
+              <div class="plan">上野恩賜公園，早上走最舒服。</div>
+            </div>
+            <div class="slot">
+              <span class="time">11:00</span>
+              <div class="plan">上野車站周邊、百貨、餐廳。中午進室內。</div>
+            </div>
+            <div class="slot">
+              <span class="time">16:00+</span>
+              <div class="plan">阿美橫町、球衣球鞋、OS。晚點逛比較不悶。</div>
+            </div>
+            <div>
+              <span class="tag">公園早去</span>
+              <span class="tag">購物</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="datebox">
+            <span class="date">7/11</span>
+            <span class="dow">六</span>
+            <span class="locked">已購票</span>
+          </div>
+          <div class="route">
+            <h3>富士山</h3>
+            <div class="slot">
+              <span class="time">早出發</span>
+              <div class="plan">富士山/河口湖早上能見度通常較好，依票券集合時間為主。</div>
+            </div>
+            <div class="slot">
+              <span class="time">全天</span>
+              <div class="plan">帶薄外套、雨具、行動電源但注意回程飛機不能在機上使用。</div>
+            </div>
+            <div>
+              <span class="tag lock">不可更動</span>
+              <span class="tag">山區天氣變化快</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="datebox">
+            <span class="date">7/12</span>
+            <span class="dow">日</span>
+          </div>
+          <div class="route">
+            <h3>秋葉原、補位日、最後購物</h3>
+            <div class="slot">
+              <span class="time">10:30</span>
+              <div class="plan">秋葉原，室內店多，適合當中午避暑日。</div>
+            </div>
+            <div class="slot">
+              <span class="time">午後</span>
+              <div class="plan">Harbs、百貨、藥妝、伴手禮補買。</div>
+            </div>
+            <div class="slot">
+              <span class="time">晚上</span>
+              <div class="plan">補東京鐵塔、澀谷、銀座，或提早回飯店整理行李。</div>
+            </div>
+            <div>
+              <span class="tag hot">備案日</span>
+              <span class="tag">室內多</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="datebox">
+            <span class="date">7/13</span>
+            <span class="dow">一</span>
+          </div>
+          <div class="route">
+            <h3>回程飛機</h3>
+            <div class="slot">
+              <span class="time">上午</span>
+              <div class="plan">飯店附近早餐、最後確認護照、錢包、信用卡、Suica、行動電源。</div>
+            </div>
+            <div class="slot">
+              <span class="time">機場</span>
+              <div class="plan">虎航抓早一點到機場。行動電源、鋰電池、耳機充電盒放隨身，不要託運。</div>
+            </div>
+            <div>
+              <span class="tag">不排遠點</span>
+              <span class="tag">回程檢查</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="offline">
+      <div class="section-title">
+        <h2>離線與手機準備</h2>
+        <span class="hint">出發前先做完</span>
+      </div>
+      <div class="grid">
+        <article class="card span-6">
+          <h3>離線必存</h3>
+          <ul class="checklist">
+            <li><span class="box"></span><span>這份 PDF 與 HTML 在手機設成「離線可用」。</span></li>
+            <li><span class="box"></span><span>VJW 兩人的 QR code 截圖，放相簿最前面。</span></li>
+            <li><span class="box"></span><span>機票、住宿、保險、迪士尼、富士山票券全部截圖。</span></li>
+            <li><span class="box"></span><span>第一晚飯店日文地址、電話、Google Maps 離線地圖。</span></li>
+            <li><span class="box"></span><span>信用卡海外交易開啟；台灣 SIM 收 OTP，網路走日本 eSIM。</span></li>
+          </ul>
+        </article>
+        <article class="card span-6">
+          <h3>夏天隨身</h3>
+          <ul class="checklist">
+            <li><span class="box"></span><span>水、電解質飲料或粉包、涼感毛巾。</span></li>
+            <li><span class="box"></span><span>遮陽帽、防曬、太陽眼鏡、輕便雨衣。</span></li>
+            <li><span class="box"></span><span>行動電源放隨身包，搭虎航時機上不要使用。</span></li>
+            <li><span class="box"></span><span>常備藥、腸胃藥、止痛藥、OK 繃。</span></li>
+            <li><span class="box"></span><span>現金與信用卡分開放，護照不要和全部現金放同一處。</span></li>
+          </ul>
+        </article>
+      </div>
+      <p class="note">沒有網路時，優先打開 PDF；HTML 是備用版，可在手機瀏覽器開。兩個檔案都不依賴外部圖片或字型。</p>
+    </section>
+
+    <footer>
+      建立日期：2026/7/3。此文件可離線閱讀；即時天氣、營業時間與票券狀態仍以出發當日官方資訊為準。
+    </footer>
+  </main>
+</body>
+</html>
