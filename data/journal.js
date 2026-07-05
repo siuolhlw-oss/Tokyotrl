@@ -1,18 +1,41 @@
 window.TRAVEL_JOURNAL_ENTRIES = [
   {
-    date: "2026/7/4 \u516d",
+    date: "2026/7/3 五",
     tags: [
-      { label: "\u7bc9\u5730" },
-      { label: "\u9280\u5ea7\u907f\u6691", tone: "hot" }
+      { label: "抵達東京" },
+      { label: "車站晚餐" }
     ],
-    title: "\u7761\u665a\u4e00\u9ede\u7684\u7bc9\u5730\u65e9\u6668\uff0c\u6700\u5f8c\u8eb2\u9032 UNIQLO \u5439\u51b7\u6c23",
+    title: "抵達東京後，晚餐改買車站便當",
     paragraphs: [
-      "\u4eca\u5929\u65e9\u4e0a\u5927\u5bb6\u6709\u9ede\u7d2f\uff0c\u7761\u5f97\u6bd4\u8f03\u665a\uff0c\u4e5d\u9ede\u591a\u624d\u51fa\u9580\u3002\u539f\u672c\u60f3\u8cb7\u4ea4\u901a\u5957\u7968\uff0c\u4f46\u7b97\u4e86\u4e00\u4e0b\u548c\u76f4\u63a5\u5237 Suica \u53ea\u5dee\u4e00\u767e\u5de6\u53f3\uff0c\u800c\u4e14 KKday \u8cb7\u7684\u7968\u9084\u4e00\u5b9a\u8981\u53bb\u7fbd\u7530\u6a5f\u5834\u514c\u63db\uff0c\u6700\u5f8c\u5c31\u653e\u68c4\u5957\u7968\uff0c\u76f4\u63a5\u7528 Suica \u51fa\u767c\u3002",
-      "\u524d\u5f80\u7bc9\u5730\u6642\u8ddf\u8457 Google Maps \u8d70\uff0c\u7d50\u679c\u5728\u7b2c\u4e00\u6708\u53f0\u4e0a\u932f\u8eca\uff0c\u624d\u767c\u73fe\u540c\u4e00\u500b\u6708\u53f0\u9084\u6703\u6709\u5176\u4ed6\u5217\u8eca\u9032\u7ad9\u3002\u9084\u597d\u689d\u689d\u5927\u8def\u901a\u7f85\u99ac\uff0c\u7e5e\u4e86\u4e00\u4e0b\u9084\u662f\u9806\u5229\u62b5\u9054\u7bc9\u5730\u5e02\u5834\u3002",
-      "\u5230\u7bc9\u5730\u5f8c\u5148\u5403\u539f\u672c\u898f\u5283\u88e1\u7684\u7389\u5b50\u71d2\u540d\u5e97\u300c\u9577\u5c71\u300d\uff0c\u63a5\u8457\u53bb\u4e00\u9593\u7ad9\u7acb\u58fd\u53f8\u5e97\u5403\u7121\u83dc\u55ae\u58fd\u53f8\uff0c8 \u8cab omakase \u5171 \u00a53,500\u3002\u5f8c\u9762\u53c8\u52a0\u78bc\u9baa\u9b5a\u5957\u9910\uff0c6 \u500b \u00a53,800\uff0c\u5403\u5f97\u5f88\u723d\u3002",
-      "\u63a5\u8fd1\u4e2d\u5348\u6642\uff0c\u539f\u672c\u8a0e\u8ad6\u8981\u53bb\u7687\u5c45\u9084\u662f\u5176\u4ed6\u5730\u65b9\uff0c\u4f46\u56e0\u70ba\u5929\u6c23\u71b1\u8d77\u4f86\uff0c\u5c31\u5148\u8dd1\u5230\u9280\u5ea7 UNIQLO \u65d7\u8266\u5e97\u5439\u51b7\u6c23\u3001\u8eb2\u592a\u967d\u3002\u5176\u5be6\u4eca\u5929\u592a\u967d\u6c92\u6709\u5f88\u5927\uff0c\u4e0d\u904e\u4e2d\u5348\u524d\u5f8c\u5207\u56de\u5ba4\u5167\uff0c\u9ad4\u529b\u6bd4\u8f03\u7a69\u3002"
+      "抵達東京後原本想吃鰻魚飯，但最後沒有吃到，改在車站附近買一些便當類的東西當晚餐。",
+      "這天不再硬排景點，先補水、整理行李、讓身體適應，後面幾天會比較穩。"
     ],
-    note: "\u82b1\u8cbb\u88dc\u8a18\uff1a\u7ad9\u7acb\u58fd\u53f8 omakase \u00a53,500\uff1b\u9baa\u9b5a\u5957\u9910 \u00a53,800\uff1b\u4ea4\u901a\u6539\u5237 Suica\uff1b\u5957\u7968\u672a\u8cfc\u8cb7\u3002",
+    note: "花費補記：車站附近便當類約 ¥2,000，估約 NT$401。",
     photos: []
+  },
+  {
+    date: "2026/7/4 六",
+    tags: [
+      { label: "築地" },
+      { label: "銀座避暑", tone: "hot" },
+      { label: "休息優先" }
+    ],
+    title: "築地、銀座、HARBS，累了就回飯店睡覺",
+    paragraphs: [
+      "今天早上大家有點累，睡得比較晚，九點多才出門。原本想買交通套票，但算了一下和直接刷 Suica 只差一百左右，而且 KKday 買的票還一定要去羽田機場兌換，最後就放棄套票，直接用 Suica 出發。",
+      "前往築地時跟著 Google Maps 走，結果在第一月台上錯車，才發現同一個月台還會有其他列車進站。還好條條大路通羅馬，繞了一下還是順利抵達築地市場。",
+      "到築地後先吃原本規劃裡的玉子燒名店「長山」，兩份玉子燒 ¥250 + ¥350，啤酒 ¥600，合計 ¥1,200。接著去一間站立壽司店吃無菜單壽司，8 貫 omakase 共 ¥3,500。後面又加碼鮪魚套餐，6 個 ¥3,800，吃得很爽。",
+      "接近中午時，原本討論要去皇居還是其他地方，但因為天氣熱起來，就先跑到銀座 UNIQLO 旗艦店吹冷氣、躲太陽。其實今天太陽沒有很大，不過中午前後切回室內，體力比較穩。",
+      "逛完 UNIQLO 後又到旁邊的百貨公司簡單走了一下，但昨天沒睡好，下午體力明顯下降。後來決定先去吃 HARBS 甜點，吃完回飯店睡覺休息。",
+      "晚上再出門補吃 7/3 沒有吃到的鰻魚飯；東京鐵塔今天先暫緩，改看 7/12 彈性日，若後面排不下就直接放掉。"
+    ],
+    note: "花費補記：築地玉子燒 ¥250 + ¥350、啤酒 ¥600，合計 ¥1,200；站立壽司 omakase ¥3,500；鮪魚套餐 ¥3,800；UNIQLO ¥26,000；交通改刷 Suica；套票未購買。HARBS 金額確認後再補；超商 ¥1,026、鰻魚飯 ¥3,600、唐吉訶德 ¥15,751、藥妝店買藥約 ¥3,800、超市宵夜與日用品約 ¥2,000 已補。",
+    photos: [
+      {
+        src: "assets/journal/2026-07-04-unagi-bones-01.jpg",
+        alt: "晚餐時點的炸鰻魚骨頭，旁邊有鹽和七味粉",
+        caption: "晚餐加點炸鰻魚骨頭，配鹽和七味粉。"
+      }
+    ]
   }
 ];
